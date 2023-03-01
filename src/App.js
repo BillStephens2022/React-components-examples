@@ -1,5 +1,6 @@
 import ButtonPage from './pages/ButtonPage';
-import Accordion from './components/Accordion';
+import AccordionPage from './pages/AccordionPage';
+import Dropdown from './components/Dropdown';
 
 function App() {
   const items = [
@@ -20,7 +21,12 @@ function App() {
     }
   ];
 
-  
+  const options = [
+    { label: 'Red', value: 'red' },
+    { label: 'Green', value: 'green' },
+    { label: 'Blue', value: 'blue' },
+  ];
+
   const handleClick = () => {
     console.log('CLICK!');
   };
@@ -28,7 +34,8 @@ function App() {
   return (
     <div>
       <ButtonPage onClick={handleClick} />
-      <Accordion items={items}/>
+      <AccordionPage items={items}/>
+      <Dropdown options={options} />
     </div>
   );
 }
