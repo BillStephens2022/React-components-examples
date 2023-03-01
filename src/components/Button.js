@@ -12,18 +12,18 @@ function Button({
     ...rest
 }) {
     const classes = className(rest.className, 'flex items-center px-3 py-1.5 border', {
-      'border-blue-500 bg-blue-500 text-white': primary,
-      'border-gray-900 bg-gray-900 text-white': secondary,
-      'border-green-500 bg-green-500 text-white': success,
-      'border-yellow-400 bg-yellow-400 text-white': warning,
-      'border-red-500 bg-red-500 text-white': danger, 
+      'border-blue-500 bg-blue-500 text-white': primary && !outline,
+      'border-gray-900 bg-gray-900 text-white': secondary && !outline,
+      'border-green-500 bg-green-500 text-white': success && !outline,
+      'border-yellow-400 bg-yellow-400 text-white': warning && !outline,
+      'border-red-500 bg-red-500 text-white': danger && !outline, 
       'rounded-full': rounded,
       'bg-white': outline,
-      'text-blue-600': outline && primary,
-      'text-gray-600': outline && secondary,
-      'text-green-600': outline && success,
-      'text-yellow-600': outline && warning,
-      'text-red-600': outline && danger,
+      'border-blue-500 text-blue-500': outline && primary,
+      'border-gray-900 text-gray-900': outline && secondary,
+      'border-green-500 text-green-500': outline && success,
+      'border-yellow-400 text-yellow-400': outline && warning,
+      'border-red-500 text-red-500': outline && danger,
     });
 
     return <button {...rest} className={classes}>{children}</button>;
