@@ -1,8 +1,15 @@
+import { useState } from 'react';
 import ButtonPage from './pages/ButtonPage';
 import AccordionPage from './pages/AccordionPage';
 import Dropdown from './components/Dropdown';
 
 function App() {
+  const [selection, setSelection] = useState(null);
+
+  const handleSelect = (option) => {
+    setSelection(option);
+  };
+
   const items = [
     {
       id: 'djfkj2',
@@ -35,7 +42,7 @@ function App() {
     <div>
       <ButtonPage onClick={handleClick} />
       <AccordionPage items={items}/>
-      <Dropdown options={options} />
+      <Dropdown options={options} value={selection} onChange={handleSelect} />
     </div>
   );
 }
